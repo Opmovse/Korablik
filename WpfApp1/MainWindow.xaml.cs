@@ -18,8 +18,50 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
+            bool IsThereShip = true;
+            for (int i = 0; i < 10; i++)
+            {
+                for (int j = 0; j < 10; j++)
+                {
+                    Button newButton = new Button()
+                    {
+                        Background = new SolidColorBrush(Color.FromRgb(100, 100, 255)),
+                        Content = "?",
+                        
+                    };
 
-           
+                    Grid.SetRow(newButton, i);
+                    Grid.SetColumn(newButton, j);
+
+                    newButton.Click += (sender, e) =>
+                    {
+
+                        Button clickedButton = (Button)sender;
+
+                        int rowIndex = Grid.GetRow(clickedButton);
+                        int columnIndex = Grid.GetColumn(clickedButton);
+
+                        if (IsThereShip)
+                        {
+                            newButton.Content = "X";
+                            newButton.Background = new SolidColorBrush(Color.FromRgb(255, 100, 100));
+                            MessageBox.Show($"В клетке [{rowIndex+1},{columnIndex+1}] оказался корабль! ");
+                        } else
+                        {
+                            newButton.Content = "-";
+                            newButton.Background = new SolidColorBrush(Color.FromRgb(100, 100, 100));
+                            MessageBox.Show($"В клетке [{rowIndex+1},{columnIndex+1}] не оказалось корабля! ");
+                        }
+
+                        
+                    };
+
+                    Opponent.Children.Add(newButton);
+
+                }
+            }
+
+
 
         }
 
@@ -45,7 +87,7 @@ namespace WpfApp1
         }*/
         #endregion
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        /*private void Button_Click(object sender, RoutedEventArgs e)
         {
             int Litri = 0;
             int current = 0;
@@ -82,7 +124,7 @@ namespace WpfApp1
                             $"Всего бочек {amount = amountBig + amountSmall}");
 
             
-        }
+        }*/
 
         private Border CreateBlueBorder()
         {
@@ -112,4 +154,6 @@ namespace WpfApp1
 
 
     }
+
+    
 }

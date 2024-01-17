@@ -9,7 +9,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="unnamed.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\CiSharp\CiSharp.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="TCP%281%29">
+      <HintPath>..\TCP(1)\bin\Debug\net8.0\TCP(1).dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="unnamed.jpg" />
   </ItemGroup>
 
 </Project>
