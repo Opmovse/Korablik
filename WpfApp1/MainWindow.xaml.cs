@@ -18,43 +18,55 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
-            bool IsThereShip = true;
+
+            Field.RandomizeField();
+
             for (int i = 0; i < 10; i++)
             {
                 for (int j = 0; j < 10; j++)
                 {
                     Button newButton = new Button()
                     {
-                        Background = new SolidColorBrush(Color.FromRgb(100, 100, 255)),
+                        Background = new SolidColorBrush(Color.FromRgb(110, 110, 255)),
                         Content = "?",
-                        
+
                     };
 
                     Grid.SetRow(newButton, i);
                     Grid.SetColumn(newButton, j);
 
+                    if (Field.Field10x10[i+1][j+1])
+                    {
+                        newButton.Content = "X";
+                        //MessageBox.Show($"В клетке [{rowIndex + 1},{columnIndex + 1}] оказался корабль! ");   
+                    }
+                    else
+                    {
+                        newButton.Content = "-";
+                        //MessageBox.Show($"В клетке [{rowIndex + 1},{columnIndex + 1}] не оказалось корабля! ");
+                    }
+                    bool Genered = false;
                     newButton.Click += (sender, e) =>
                     {
-
-                        Button clickedButton = (Button)sender;
-
-                        int rowIndex = Grid.GetRow(clickedButton);
-                        int columnIndex = Grid.GetColumn(clickedButton);
-
-                        if (IsThereShip)
+                        
+                        if (Genered)
                         {
-                            newButton.Content = "X";
-                            newButton.Background = new SolidColorBrush(Color.FromRgb(255, 100, 100));
-                            MessageBox.Show($"В клетке [{rowIndex+1},{columnIndex+1}] оказался корабль! ");
-                        } else
-                        {
-                            newButton.Content = "-";
-                            newButton.Background = new SolidColorBrush(Color.FromRgb(100, 100, 100));
-                            MessageBox.Show($"В клетке [{rowIndex+1},{columnIndex+1}] не оказалось корабля! ");
+
                         }
 
-                        
+                        /*Button clickedButton = (Button)sender;
+
+                        int rowIndex = Grid.GetRow(clickedButton)+1;
+                        int columnIndex = Grid.GetColumn(clickedButton)+1;
+                        if (newButton.IsEnabled)
+                        {
+                            
+                            newButton.IsEnabled = false;
+                        }*/
+                        //else { MessageBox.Show($"Выберите другое поле!!"); }
+
                     };
+                    
 
                     Opponent.Children.Add(newButton);
 
@@ -155,5 +167,5 @@ namespace WpfApp1
 
     }
 
-    
+
 }
