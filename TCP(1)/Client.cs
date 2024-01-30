@@ -9,7 +9,7 @@ class Client
     {
         // Устанавливаем IP адрес и порт сервера
         IPAddress ipAddress = IPAddress.Parse("127.0.0.1");
-        int port = 12345;
+        int port = 55554;
 
         // Создаем объект IPEndPoint и Socket для подключения к серверу
         IPEndPoint ipEndPoint = new IPEndPoint(ipAddress, port);
@@ -17,7 +17,7 @@ class Client
 
         // Подключаемся к серверу
         clientSocket.Connect(ipEndPoint);
-        Console.WriteLine("Подключение к серверу установлено");
+        
 
         // Отправляем сообщение серверу
         string message = "Привет, я клиент!";
@@ -28,7 +28,7 @@ class Client
         byte[] replyBuffer = new byte[1024];
         int bytesRead = clientSocket.Receive(replyBuffer);
         string replyMessage = Encoding.UTF8.GetString(replyBuffer, 0, bytesRead);
-        Console.WriteLine("Сервер: " + replyMessage);
+        
 
         // Закрываем соединение
         clientSocket.Shutdown(SocketShutdown.Both);

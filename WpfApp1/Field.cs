@@ -14,10 +14,10 @@ namespace WpfApp1
     
         static Field()
         {
-            for (int i = 0; i < 12; i++)
+            for (int i = 0; i < 10; i++)
             {
                 Field10x10.Add(new List<bool>());
-                for (int j = 0; j < 12; j++)
+                for (int j = 0; j < 10; j++)
                 {
                     Field10x10[i].Add(false);
                 }
@@ -89,6 +89,39 @@ namespace WpfApp1
                 }
                 else break;
             }
+
+        }
+
+        static public void PresetField()
+        {
+            Field10x10[1][1] = true;
+            Field10x10[1][2] = true;
+            Field10x10[1][3] = true;
+            Field10x10[2][2] = true;
+
+            Field10x10[1][5] = true;
+            Field10x10[1][6] = true;
+            Field10x10[1][7] = true;
+
+            Field10x10[3][8] = true;
+
+            Field10x10[4][1] = true;
+            Field10x10[4][3] = true;
+
+            Field10x10[5][1] = true;
+            Field10x10[5][6] = true;
+            Field10x10[6][1] = true;
+            Field10x10[6][2] = true;
+            Field10x10[6][8] = true;
+            Field10x10[7][8] = true;
+            Field10x10[7][6] = true;
+            Field10x10[8][3] = true;
+            Field10x10[8][8] = true;
+
+
+
+
+
 
         }
      

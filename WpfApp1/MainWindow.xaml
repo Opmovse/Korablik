@@ -11,7 +11,12 @@
             <ColumnDefinition  />
             <ColumnDefinition  />
         </Grid.ColumnDefinitions>
-        
+
+        <Grid Grid.Column="0">
+            <TextBlock HorizontalAlignment="Center" Margin="20" FontSize="20"  x:Name="Turn"> Ur Turn </TextBlock>
+            <Button x:Name="HOST" Height="20" Width="100" VerticalAlignment="Bottom" Margin="25"></Button>
+        </Grid>
+
         <Grid Grid.Column="1">
             <Border BorderBrush="Black" BorderThickness="2" Height="220" Width="220">
                 <Grid Height="220" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" x:Name="Your" Margin="-2,0,-2,0"  >

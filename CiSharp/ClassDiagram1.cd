@@ -18,7 +18,7 @@
   <Interface Name="IMovable">
     <Position X="3.25" Y="2.75" Width="3.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAIAAAAAAAAAEAAQAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
   </Interface>

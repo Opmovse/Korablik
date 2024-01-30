@@ -11,7 +11,7 @@ namespace WpfApp1
     public class Ship
     {
         public enum Counts{
-           Dots = 10,
+           Dots = 5,
            Liners = 2,
            T_Shaped = 1,
            Angled = 1,

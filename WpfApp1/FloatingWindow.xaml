@@ -1,0 +1,20 @@
+﻿<Window x:Class="WpfApp1.FloatingWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="FloatingWindow" Height="361" Width="232" MinHeight="226" MinWidth="198" Closing="Window_Closing" >
+
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="175">
+            <RadioButton FontSize ="20" Content="Im host" Height="34" Checked="RadioButton_Checked" x:Name="ImHost" x:FieldModifier="public"/>
+            <RadioButton FontSize ="20" Content="Im player" Checked="RadioButton_Checked_1" x:Name="ImPlayer" x:FieldModifier="public" />
+
+            <TextBox x:Name="IPtoConnect" Margin="10" x:FieldModifier="public" />
+
+            <Button Width="110" Height="35" Content="Start" FontSize="16" VerticalContentAlignment="Center" Click="Button_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
